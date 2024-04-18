@@ -21,6 +21,7 @@ struct ContentView: View {
                 .cornerRadius(20.0)
                 .padding(9)
                 .background(.ultraThickMaterial,in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+                .strokeStyle(cornerRadius: 3)
             
             Text("SwiftUI for iOS 15")
                 .fontWeight(.bold)
@@ -49,12 +50,7 @@ struct ContentView: View {
         //.mask(RoundedRectangle(cornerRadius: 35,style: .continuous))
         .shadow(radius: /*@START_MENU_TOKEN@*/20/*@END_MENU_TOKEN@*/)
         .shadow(color: Color("Shadow").opacity(0.3), radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/,x: 0,y:10)
-        .overlay(
-            RoundedRectangle(cornerRadius: 25,style: .continuous)
-                .stroke(.linearGradient(colors:[.white.opacity(0.3), .black.opacity(0.1)], startPoint: .top, endPoint: .bottom))
-                //使用blendmode调整混合模式,让添加的overlay和原来的内容叠加更自然
-                .blendMode(.overlay)
-        )
+        .strokeStyle()
         .padding(.horizontal,20)
         .background(Image("Blob 1").offset(x: 230, y:-110))
         .overlay(
