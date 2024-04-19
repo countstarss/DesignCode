@@ -10,8 +10,6 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         
-        Spacer()
-        
         VStack(alignment: .leading,spacing: 8){
             Spacer()
             Image("Logo 2")
@@ -60,10 +58,6 @@ struct ContentView: View {
                 .frame(height:230)
                 .offset(x:32,y:-80)
         )
-        
-        
-        
-        Spacer()
     }
 }
 
