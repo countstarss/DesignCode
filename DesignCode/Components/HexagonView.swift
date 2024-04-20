@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HexagonView: View {
     var body: some View {
+        
         Canvas { context, size in
             
 //            context.draw(Image("Blob 1"), in: CGRect(x: 15, y: 15, width: 170, height: 170))

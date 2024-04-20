@@ -1,15 +1,14 @@
 //
-//  ContentView.swift
+//  FEaturedItem.swift
 //  DesignCode
 //
-//  Created by 王佩豪 on 2024/4/18.
+//  Created by 王佩豪 on 2024/4/20.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct FeaturedItem: View {
     var body: some View {
-        
         VStack(alignment: .leading,spacing: 8){
             Spacer()
             Image("Logo 2")
@@ -28,7 +27,7 @@ struct ContentView: View {
             Text("20 sections - 3 hours".uppercased())
                 .font(.footnote)
                 .fontWeight(.semibold)
-                // 使用字体颜色和Style将使字体能够适应light和dark模式
+            // 使用字体颜色和Style将使字体能够适应light和dark模式
                 .foregroundStyle(.secondary)
             Text("Build an iOS app for iOS 15 with custom layouts, animations and ...")
                 .font(.footnote)
@@ -43,11 +42,11 @@ struct ContentView: View {
         .frame(height: 350.0)
         // 把材质和mask结合起来
         .background(.ultraThinMaterial,in: RoundedRectangle(cornerRadius: 25, style: .continuous))
-         // RoundedRectangle 的这个属性 style: .continuous ,可以让圆角过渡更加圆滑
+        // RoundedRectangle 的这个属性 style: .continuous ,可以让圆角过渡更加圆滑
         // mask会遮挡范围之外的内容
         //.mask(RoundedRectangle(cornerRadius: 35,style: .continuous))
-        .shadow(radius: /*@START_MENU_TOKEN@*/20/*@END_MENU_TOKEN@*/)
-        .shadow(color: Color("Shadow").opacity(0.3), radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/,x: 0,y:10)
+        .shadow(radius: 20)
+        .shadow(color: Color("Shadow").opacity(0.3), radius: 10,x: 0,y:10)
         .strokeStyle()
         .padding(.horizontal,20)
         .background(Image("Blob 1").offset(x: 230, y:-110))
@@ -62,5 +61,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    FeaturedItem()
 }

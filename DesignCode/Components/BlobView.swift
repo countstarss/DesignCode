@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BlobView: View {
-    @State var appear = false
+    @State var appear = true
     
     var body: some View {
         //在Canvas中使用
@@ -37,15 +37,14 @@ struct BlobView: View {
         }
         .onAppear(){
             withAnimation(.spring(duration:20,bounce:0.3).repeatForever()){
-                appear = true
+                appear = false
             }
-            
         }
         
 
     }
     
-    //动画的原理就是将上面变化的x传入path中,
+    //动画的原理就是将上面变化的x传入path中
     func path(in rect: CGRect,x:Double) -> Path {
         var path = Path()
         let width = rect.size.width

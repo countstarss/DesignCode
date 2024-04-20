@@ -8,45 +8,29 @@
 import SwiftUI
 
 struct TabBar: View {
-    @State var selectedTab:Tab = .home
+    @AppStorage("selectedTab") var selectedTab:Tab = .home
     @State var color:Color = .teal
     @State var tabItemWidth:CGFloat = 0
     
     var body: some View {
-        ZStack(alignment:.bottom){
-            //modifier可以添加在Group上,不能直接添加在Switch上
-            Group{
-                switch selectedTab {
-                case .home:
-                    ContentView()
-                case .explore:
-                    AccountView()
-                case .notice:
-                    ContentView()
-                case .library:
-                    AccountView()
-                }
-            }
-            .frame(maxWidth:.infinity,maxHeight:.infinity)
-
-            HStack{
-                Spacer()
-                button
-                Spacer()
-            }
-            .padding(.top,28)
-            .frame(height:88,alignment:.top)
-            .background(.ultraThinMaterial, in : RoundedRectangle(cornerRadius: 34, style: .continuous))
-            .background(
-                background
-                .padding(.horizontal,12)
-            )
-            .overlay(
-                overlay
-                .padding(.horizontal,12)
-            )
-            .strokeStyle(cornerRadius: 34)
+        HStack{
+            Spacer()
+            button
+            Spacer()
         }
+        .padding(.top,28)
+        .frame(height:88,alignment:.top)
+        .background(.ultraThinMaterial, in : RoundedRectangle(cornerRadius: 34, style: .continuous))
+        .background(
+            background
+            .padding(.horizontal,12)
+        )
+        .overlay(
+            overlay
+            .padding(.horizontal,12)
+        )
+        .strokeStyle(cornerRadius: 34)
+        .frame(maxHeight:.infinity,alignment:.bottom)
         .ignoresSafeArea()
     }
     
@@ -70,6 +54,7 @@ struct TabBar: View {
             }
             .foregroundStyle(selectedTab == item.tab ? .primary : .secondary)
             .blendMode(selectedTab == item.tab ? .overlay : .normal)
+            //这个overlay是用于横屏时让效果和按钮位置对齐的
             .overlay(
                 // 几何阅读器,通过识别组件的大小来决定circle和overlay的宽度
                 GeometryReader { proxy in
