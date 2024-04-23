@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF03F8CA2BD5EE7E00C01BC0 /* AnimatableFontModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03F8C92BD5EE7E00C01BC0 /* AnimatableFontModifier.swift */; };
+		DF03F8CC2BD5EEBA00C01BC0 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF03F8CB2BD5EEBA00C01BC0 /* Course.swift */; };
 		DF1E3DD22BD099B900A70328 /* DesignCodeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E3DD12BD099B900A70328 /* DesignCodeApp.swift */; };
 		DF1E3DD42BD099B900A70328 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF1E3DD32BD099B900A70328 /* ContentView.swift */; };
 		DF1E3DD62BD099BA00A70328 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF1E3DD52BD099BA00A70328 /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF03F8C92BD5EE7E00C01BC0 /* AnimatableFontModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableFontModifier.swift; sourceTree = "<group>"; };
+		DF03F8CB2BD5EEBA00C01BC0 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		DF1E3DCE2BD099B900A70328 /* DesignCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF1E3DD12BD099B900A70328 /* DesignCodeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCodeApp.swift; sourceTree = "<group>"; };
 		DF1E3DD32BD099B900A70328 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 			children = (
 				DF1E3DE92BD2010600A70328 /* Tab.swift */,
 				DF5FE7582BD3B02D00301252 /* PreferenceKey.swift */,
+				DF03F8CB2BD5EEBA00C01BC0 /* Course.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				DF1E3DDF2BD0B45500A70328 /* Styles.swift */,
+				DF03F8C92BD5EE7E00C01BC0 /* AnimatableFontModifier.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -223,10 +229,12 @@
 				DF5FE7572BD39E6000301252 /* NavigationBar.swift in Sources */,
 				DF5FE7592BD3B02D00301252 /* PreferenceKey.swift in Sources */,
 				DF1E3DEA2BD2010600A70328 /* Tab.swift in Sources */,
+				DF03F8CC2BD5EEBA00C01BC0 /* Course.swift in Sources */,
 				DF1E3DE62BD11C0500A70328 /* BlobView.swift in Sources */,
 				DF1E3DD42BD099B900A70328 /* ContentView.swift in Sources */,
 				DF1E3DD22BD099B900A70328 /* DesignCodeApp.swift in Sources */,
 				DF1E3DE82BD1F90700A70328 /* TabBar.swift in Sources */,
+				DF03F8CA2BD5EE7E00C01BC0 /* AnimatableFontModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

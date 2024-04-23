@@ -16,11 +16,12 @@ struct NavigationBar: View {
             Color.clear
                 .background(.ultraThinMaterial)
                 .blur(radius: 10)
-//                .opacity(hasScrolled ? 0 : 1)
+//                .opacity(hasScrolled ? 1 : 0)
                 .offset(y:hasScrolled ? -4 : 0)
             
             Text(title)
-                .font(hasScrolled ? .title.weight(.bold) : .largeTitle.weight(.bold))
+                .animatableFont(size: hasScrolled ? 22 : 32 , weight: .bold, design: .default)
+//                .font(hasScrolled ? .title.weight(.bold) : .largeTitle.weight(.bold))
                 .frame(maxWidth:.infinity,alignment:.leading)
                 .padding(.leading,20)
                 .padding(.top,20)
