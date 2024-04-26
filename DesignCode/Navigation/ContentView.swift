@@ -18,11 +18,11 @@ struct ContentView: View {
 //            Group{
                 switch selectedTab {
                 case .home:
-                    HomeView()
+                    HomeView(show: .constant(true))
                 case .explore:
-                    AccountView()
+                    MatchedView()
                 case .notice:
-                    HomeView()
+                    HomeView(show: .constant(true))
                 case .library:
                     AccountView()
                 }

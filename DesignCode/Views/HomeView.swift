@@ -10,6 +10,9 @@ import SwiftUI
 struct HomeView: View {
     //设置一个状态,控制视图
     @State var hasScrolled = false
+    @Namespace var namespace
+    @Binding var show :Bool
+    @State var showStatusBar = true
     
     var body: some View {
         ZStack {
@@ -19,8 +22,25 @@ struct HomeView: View {
                 scrollDetection
                 
                 featured
-
-                Color.clear.frame(height: 1000)
+                
+                Text("Course".uppercased())
+                    .font(.title2.weight(.semibold))
+                    .foregroundColor(.secondary)
+                    .frame(maxWidth: .infinity,alignment:.leading)
+                    .padding(.horizontal,25)
+//                Color.clear.frame(height: 1000)
+                if show{
+                        MatchedView()
+//                    CourseItem(namespace: _namespace, show: $show)
+//                        .onTapGesture {
+//                            withAnimation{
+//                                show.toggle()
+//                                showStatusBar = false
+//                            }
+//                        }
+                }
+                
+                
             }
             .coordinateSpace(name:"scroll")
             //因为我们监控滑动的高度使用perferenceKey,所以使用onPerferenceChange控制
@@ -40,15 +60,26 @@ struct HomeView: View {
             .overlay(
                 NavigationBar(title: "Feature", hasScrolled: $hasScrolled)
                     .opacity(hasScrolled ? 0 : 1)
-        )
+            )
+            
         }
-        
+        .statusBar(hidden: !showStatusBar)
+        .onChange(of: show){ newValue in
+            withAnimation(.closeCard) {
+                if newValue {
+                    showStatusBar = false
+                }else{
+                    showStatusBar = true
+                }
+            }
+            
+        }
         
     }
     var scrollDetection:some View{
         GeometryReader {proxy in
             //高度的值可以在这里输出出来,但是不能直接用于赋值,需通过首选项键(PreferenceKey)取出
-            Text("\(proxy.frame(in: .named("scroll")).minY)")
+//            Text("\(proxy.frame(in: .named("scroll")).minY)")
             Color.clear.preference(key: ScrollPreferenceKey.self, value: proxy.frame(in: .named("scroll")).minY)
         }
     }
@@ -86,5 +117,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    HomeView( show: .constant(true))
 }

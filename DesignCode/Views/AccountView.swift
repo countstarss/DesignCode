@@ -59,7 +59,7 @@ struct AccountView: View {
         Section{
             //usage of navigationLink
             // 1
-            NavigationLink(destination: HomeView()){
+            NavigationLink(destination: HomeView(show: .constant(true))){
                 Label("Setting",systemImage: "gear")
             }
             
